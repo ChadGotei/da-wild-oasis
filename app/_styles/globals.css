@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme('colors.primary.900');
+    border-right-color: theme('colors.primary.200');
+    animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme('colors.primary.200');
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+/* For data picker */
+
+.rdp {
+  --rdp-cell-size: 32px !important;
+  --rdp-accent-color: theme('colors.accent.500') !important;
+  --rdp-background-color: theme('colors.accent.600') !important;
+  margin: 0 !important;
+}
+
+
+/* Customising the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1B2631;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5E82A6;
+  border: 3px solid #141C24;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4C6B8A;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #3C546C;
+}
+
+/* ::selection {
+  background: #C69963;
+  color: #1B2631;
+}
+
+::-webkit-selection {
+  background: #C69963;
+  color: #1B2631;
+} */
+
+::selection {
+  background: var(--color-primary-500);
+  color: #FFFFFF;
+}
+
+::-webkit-selection {
+  background: var(--color-primary-500);
+  color: #FFFFFF;
+}
+
+h1::selection, h2::selection {
+  background-color: var(--color-accent-500);
+  color: #000;
+}
+
+h3::selection {
+  background-color: white;
+  color: var(--color-primary-900);
+}
